@@ -239,7 +239,25 @@ extras/outline/outline.pdf : extras/outline/outline.rmd\
 			     data/raw/scenario_1/evaluation.rds
 	R -e 'rmarkdown::render("extras/outline/outline.rmd", output_format = "all")'
 
-submission/manuscript.pdf submission/manuscript.docx : submission/manuscript.rmd\
+submission/manuscript.pdf : submission/manuscript.rmd\
+	submission/arxiv.sty\
+	submission/references.bib\
+	data/raw/gusto.rda\
+	data/processed/adaptiveModel.csv\
+	data/processed/gustoPerformanceMetrics.csv\
+	data/processed/adaptiveSelections.csv\
+	data/processed/rmseDistribution.csv\
+	data/processed/discriminationDistribution.csv\
+	data/processed/calibration.csv\
+	figures/rmse_moderate_base.tiff\
+	figures/rmse_moderate_sample_size.tiff\
+	figures/rmse_moderate_auc.tiff\
+	figures/calibration_moderate_base.tiff\
+	figures/discrimination_moderate_base.tiff\
+	figures/gusto.tiff
+	R -e 'rmarkdown::render("submission/manuscript.rmd", output_format = "rticles::elsevier_article")'
+
+submission/manuscript.docx : submission/manuscript.rmd\
 	submission/arxiv.sty\
 	submission/references.bib\
 	data/raw/gusto.rda\
