@@ -3,6 +3,7 @@ cover_letter*
 submission/*.pdf
 manuscript_files
 manuscript_cache
+_bookdown_files
 supplement_files
 supplement_cache
 rsconnect

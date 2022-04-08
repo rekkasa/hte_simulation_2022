@@ -232,3 +232,5 @@ restore:
 	code/Clean.R
 clean:
 	rm -rf data/raw/scenario_* data/processed/*.csv data/raw/gusto.rda figures/*.png figures/*.tiff; 
+book:
+	code/MakeBook.R
