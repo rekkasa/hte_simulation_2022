@@ -1,4 +1,4 @@
-book_filename: "thesis_plan"
+book_filename: "hte_simulation"
 new_session: false
 before_chapter_script: _common.R
 delete_merged_file: true
