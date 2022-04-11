@@ -185,7 +185,7 @@ Outcomes in the treatment arm were first generated using 3 simple scenarios:
 absent (OR = 1), moderate (OR = 0.8) and strong (OR = 0.5) constant treatment
 effect. We then introduced linear, quadratic and non-monotonic deviations from
 constant treatment effects using:
-$$lp_1 = \gamma_2(PI-c)^2 + \gamma_1(PI-c) + \gamma_0, $$
+$$lp_1 = \gamma_2(lp_0-c)^2 + \gamma_1(lp_0-c) + \gamma_0, $$
 where $lp_1$ is the true linear predictor in the treatment arm, so that
 $P(y=1|X, Z=1) = \text{expit}(lp_1)$. Finally, we incorporated constant absolute
 harms for all treated patients, such that

@@ -6,7 +6,7 @@ fig:calibration
 fig:gusto
 introduction
 methods
-background
+notation
 simulation-scenarios
 individualized-risk-based-benefit-predictions
 evaluation-metrics

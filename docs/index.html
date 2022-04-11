@@ -47,47 +47,35 @@
 <h1>
 <span class="header-section-number">1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction"><i class="fas fa-link"></i></a>
 </h1>
-<p>Predictive approaches for assessing heterogeneity of treatment effects (HTE) aim
-at the development of models predicting either individualized effects or which
-of two (or more) treatments is better for an individual <span class="citation">[<a href="references.html#ref-Varadhan2013" role="doc-biblioref">1</a>]</span>. In
-prior work, we divided such methods in three broader categories based on the
-reference class used for defining patient similarity when making individualized
-predictions or recommendations <span class="citation">[<a href="references.html#ref-Rekkas2020" role="doc-biblioref">2</a>]</span>. First, risk-modeling approaches
-use prediction of baseline risk as the reference; second, treatment effect
-modeling approaches also model treatment-covariate interactions, in addition to
-risk factors; third, optimal treatment regime approaches focus on developing
-treatment assignment rules and rely heavily on modeling treatment effect
-modifiers. A key difference between these approaches is their parsimony in
-dealing the treatment effect modifiers, with no interaction considered (risk
-modeling), a limited number of interactions (effect modeling), or a larger set
-of interactions (optimal treatment regime approaches).</p>
+<p>Predictive approaches to heterogeneity of treatment effects (HTE) aim at the
+development of models predicting either individualized effects or which of two
+(or more) treatments is better for an individual <span class="citation">[<a href="references.html#ref-Varadhan2013" role="doc-biblioref">1</a>]</span>. In prior work,
+we divided such methods in three broader categories based on the reference class
+used for defining patient similarity when making individualized predictions or
+recommendations <span class="citation">[<a href="references.html#ref-Rekkas2020" role="doc-biblioref">2</a>]</span>. Risk-modeling approaches use prediction of
+baseline risk as the reference; treatment effect modeling approaches also model
+treatment-covariate interactions, in addition to risk factors; optimal treatment
+regime approaches focus on developing treatment assignment rules and rely
+heavily on modeling treatment effect modifiers.</p>
 <p>Risk-modeling approaches to predictive HTE analyses provide a viable option in
-the absence of well-established treatment effect modifiers <span class="citation">[<a href="references.html#ref-Kent2019" role="doc-biblioref">3</a>,<a href="references.html#ref-PathEnE" role="doc-biblioref">4</a>]</span>. In simulations, modeling of effect modifiers, i.e.
-treatment-covariate interactions, often led to miscalibrated predictions of
-absolute benefit, while risk-based methods proved quite robust in terms of
-benefit calibration, although provided weaker discrimination of benefit in the
-presence of true effect modifiers <span class="citation">[<a href="references.html#ref-vanKlaveren2019" role="doc-biblioref">5</a>]</span>. Most often, risk-modeling
-approaches are carried out in two steps: first a risk prediction model is
-developed externally or internally on the entire RCT population, “blinded” to
-treatment; then the RCT population is stratified using this prediction model to
-evaluate risk-based treatment effect variation <span class="citation">[<a href="references.html#ref-Kent2010" role="doc-biblioref">6</a>]</span>. This two-step
-approach identified substantial absolute treatment effect differences between
-low-risk and high-risk patients in a re-analysis of 32 large trials
-<span class="citation">[<a href="references.html#ref-Kent2016" role="doc-biblioref">7</a>]</span>. However, even though estimates at the risk subgroup level may be
-accurate, these estimates may need further refinement for individual patients,
-especially for patients with predicted risk at the boundaries of the risk
-intervals. Hence, the risk-stratified approach is useful for exploring and
-presenting HTE, but is not sufficient for supporting treatment decisions for
+the absence of well-established treatment effect modifier <span class="citation">[<a href="references.html#ref-Kent2019" role="doc-biblioref">3</a>,<a href="references.html#ref-PathEnE" role="doc-biblioref">4</a>]</span>. In simulations, modeling treatment-covariate interactions, often led
+to miscalibrated predictions of absolute benefit, contrary to risk-based
+methods, despite their weaker discrimination of benefit in the presence of true
+effect modifiers <span class="citation">[<a href="references.html#ref-vanKlaveren2019" role="doc-biblioref">5</a>]</span>. Most often, risk-modeling approaches are
+carried out in two steps: first a risk prediction model is developed externally
+or internally on the entire RCT population, “blinded” to treatment; then the RCT
+population is stratified using this prediction model to evaluate risk-based
+treatment effect variation <span class="citation">[<a href="references.html#ref-Kent2010" role="doc-biblioref">6</a>]</span>. is approach identified substantial
+absolute treatment effect differences between low-risk and high-risk patients in
+a re-analysis of 32 large trials <span class="citation">[<a href="references.html#ref-Kent2016" role="doc-biblioref">7</a>]</span>. However, even though estimates at
+the risk subgroup level may be accurate, these estimates may not apply to
 individual patients.</p>
-<p>To individualize treatment effects, the recent PATH statement suggested various
-risk-based models including a prognostic index of baseline risk (PI) and
-treatment assignment <span class="citation">[<a href="references.html#ref-Kent2019" role="doc-biblioref">3</a>,<a href="references.html#ref-PathEnE" role="doc-biblioref">4</a>]</span>. In the current simulation study, we
-aim to summarize and compare different risk-based models for predicting
-individualized treatment effects. We simulate different relations between
-baseline risk and treatment effects and also consider potential harms of
-treatment. We illustrate the different models by a case study of predicting
-individualized effects of treatment for acute myocardial infarction (MI) in a
-large randomized controlled trial (RCT).</p>
+<p>In the current simulation study, we aim to summarize and compare different
+risk-based models for predicting individualized treatment effects. We simulate
+different relations between baseline risk and treatment effects and also
+consider potential harms of treatment. We illustrate the different models by a
+case study of predicting individualized effects of treatment for acute
+myocardial infarction (MI) in a large RCT.</p>
 </div>
   <div class="chapter-nav">
 <div class="empty"></div>
@@ -110,7 +98,7 @@ large randomized controlled trial (RCT).</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong></strong>" was written by Alexandros Rekkas. It was last built on 2022-04-08.</p>
+    <p>"<strong></strong>" was written by Alexandros Rekkas. It was last built on 2022-04-11.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

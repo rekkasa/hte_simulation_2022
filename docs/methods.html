@@ -47,9 +47,9 @@
 <h1>
 <span class="header-section-number">2</span> Methods<a class="anchor" aria-label="anchor" href="#methods"><i class="fas fa-link"></i></a>
 </h1>
-<div id="background" class="section level2" number="2.1">
+<div id="notation" class="section level2" number="2.1">
 <h2>
-<span class="header-section-number">2.1</span> Background<a class="anchor" aria-label="anchor" href="#background"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.1</span> Notation<a class="anchor" aria-label="anchor" href="#notation"><i class="fas fa-link"></i></a>
 </h2>
 <p>We observe RCT data <span class="math inline">\((Z, X, Y)\)</span>, where for each patient <span class="math inline">\(Z_i= 0, 1\)</span> is the
 treatment status, <span class="math inline">\(Y_i = 0, 1\)</span> is the observed outcome and <span class="math inline">\(X_i\)</span> is a set of
@@ -64,96 +64,77 @@ CATE from
 \tau(x) &amp;= E\{Y(0)\:\vert\:X=x\}-E\{Y(1)\:\vert\:X=x\}\\
 &amp;=E\{Y\:\vert\:X=x, Z=0\}-E\{Y\:\vert\:X=x, Z=1\}
 \end{align*}\]</span></p>
-<p>Based on an estimate of baseline risk
-<span class="math display">\[
-E\{Y\:\vert\:X=x, Z=0\}=g\big(lp(x)\big)
-\]</span>
-with <span class="math inline">\(u=lp(x)=\hat{\beta}^tx\)</span> the linear predictor and <span class="math inline">\(g\)</span> the link function,
-we predict CATE from
-<span class="math display">\[
-\hat{\tau}(x) = g\big(f(u, 0)\big) - g\big(f(u, 1)\big)
-\]</span>
-where <span class="math inline">\(f(u,z)\)</span> describes interactions of the baseline risk linear predictor with
-treatment. In the rest of the paper we use the linear predictor <span class="math inline">\(lp(x)\)</span> as the
-prognostic index (PI) for the outcome <span class="math inline">\(Y\)</span>.</p>
 </div>
 <div id="simulation-scenarios" class="section level2" number="2.2">
 <h2>
 <span class="header-section-number">2.2</span> Simulation scenarios<a class="anchor" aria-label="anchor" href="#simulation-scenarios"><i class="fas fa-link"></i></a>
 </h2>
-<p>We simulated a typical RCT that is undertaken to compare a binary outcome
-(e.g. death) between a group of patients in the treatment arm and a
-group of untreated patients in the control arm. For each patient we generated 8
-baseline covariates <span class="math inline">\(x_1,\dots,x_4\sim N(0, 1)\)</span> and <span class="math inline">\(x_5,\dots,x_8\sim B(1, 0.2)\)</span>. Treatment was allocated using a 50:50 split. Outcomes for patients in the
-control arm were generated from a logistic regression model including all
-baseline covariates. In the base scenarios coefficient values were such, that
-the AUC of the logistic regression model was <span class="math inline">\(0.75\)</span> and the event rate in the
-control arm was <span class="math inline">\(20\%\)</span>. Binary outcomes in the control arm were generated from
-Bernoulli variables with true probabilities
-<span class="math inline">\(P(y=1|X, t_x = 0) = \text{expit}(PI)=\frac{e^{PI}}{1+e^{PI}}\)</span>.</p>
-<p>Outcomes in the treatment arm were generated using 3 base scenarios: absent
-treatment effect (OR = 1), moderate treatment effect (OR = 0.8) and strong
-treatment effect (OR = 0.5). We started with simulating outcomes based on true
-constant relative treatment effects for the 3 base scenarios. We then simulated
-linear, quadratic and non-monotonic deviations from constant treatment effects
-using:
-<span class="math display">\[lp_1 = \gamma_2(PI-c)^2 + \gamma_1(PI-c) + \gamma_0, \]</span>
+<p>We simulated a typical RCT, comparing equally-sized treatment and control arms
+in terms of a binary outcome. For each patient we generated 8 baseline
+covariates <span class="math inline">\(x_1,\dots,x_4\sim N(0, 1)\)</span> and
+<span class="math inline">\(x_5,\dots,x_8\sim B(1,0.2)\)</span>. Outcomes in the control arm were generated from
+Bernoulli variables with true probabilities following a logistic regression
+model including all baseline covariates.
+<span class="math inline">\(P(y=1|X, t_x = 0) = \text{expit}(lp_0)=\frac{e^{lp_0}}{1+e^{lp_0}}\)</span>.
+In the base scenarios coefficient values <span class="math inline">\(\beta\)</span> were such, that the AUC of the
+logistic regression model was 0.75 and the event rate in the control arm was
+<span class="math inline">\(20\%\)</span>.</p>
+<p>Outcomes in the treatment arm were first generated using 3 simple scenarios:
+absent (OR = 1), moderate (OR = 0.8) and strong (OR = 0.5) constant treatment
+effect. We then introduced linear, quadratic and non-monotonic deviations from
+constant treatment effects using:
+<span class="math display">\[lp_1 = \gamma_2(lp_0-c)^2 + \gamma_1(lp_0-c) + \gamma_0, \]</span>
 where <span class="math inline">\(lp_1\)</span> is the true linear predictor in the treatment arm, so that
-<span class="math inline">\(P(y=1|X, Z=1) = \text{expit}(lp_1)\)</span>. Finally, we simulated scenarios where a
-constant absolute harm is applied across all treated patients. In this case we
-have <span class="math inline">\(P(y=1|X,Z=1) = \text{expit}(lp_1) + \text{harm}\)</span>.</p>
-<p>The sample size for the base scenarios was set to 4,250, since this sample size
-provides <span class="math inline">\(80\%\)</span> power for the detection of a marginal OR of 0.8 with the
-standard alpha of 0.5%. We evaluated the effect of smaller or larger sample
-sizes of 1,063 (4,250 divided by 4) and 17,000 (4250 multiplied by 4),
-respectively. We also evaluated the effect of worse or better discriminative
-ability for risk, adjusting the baseline covariate coefficients, such that the
-AUC of the regression model in the control arm was 0.65 and 0.85 respectively.</p>
-<p>Combining all these settings resulted in a simulation study of 648 scenarios
-(exact settings in the supplementary material). With these scenarios we were
-able to cover the observed treatment effect heterogeneity in 32 large trials as
-well as many other potential variations of risk-based treatment effect
-<span class="citation">[<a href="references.html#ref-Kent2016" role="doc-biblioref">7</a>]</span>.</p>
+<span class="math inline">\(P(y=1|X, Z=1) = \text{expit}(lp_1)\)</span>. Finally, we incorporated constant absolute
+harms for all treated patients, such that
+<span class="math inline">\(P(y=1|X,Z=1) = \text{expit}(lp_1) + \text{harm}\)</span>.</p>
+<p>The sample size for the base scenarios was set to 4,250 (80% power for the
+detection of a marginal OR of 0.8 with the standard alpha of 5%). We evaluated
+the effect of smaller or larger sample sizes of 1,063 and 17,000,
+respectively. We also evaluated the effect of risk model discriminative ability,
+adjusting the baseline covariate coefficients, such that the AUC of the
+regression model in the control arm was 0.65 and 0.85 respectively.</p>
+<p>These settings resulted in a simulation study of 648 scenarios covering the
+observed HTE in 32 large trials as well as many other potential variations of
+risk-based treatment effect (Supplement, Sections 2 and 3) <span class="citation">[<a href="references.html#ref-Kent2016" role="doc-biblioref">7</a>]</span>.</p>
 </div>
 <div id="individualized-risk-based-benefit-predictions" class="section level2" number="2.3">
 <h2>
 <span class="header-section-number">2.3</span> Individualized risk-based benefit predictions<a class="anchor" aria-label="anchor" href="#individualized-risk-based-benefit-predictions"><i class="fas fa-link"></i></a>
 </h2>
-<p>All risk-based methods assume that a risk prediction model is available to
-assign risk predictions to individual patients. For the simulations we developed
-a prediction model internally on the entire population, using a logistic
-regression model with main effects for all baseline covariates and treatment
-assignment. Baseline risk predictions for individual patients were derived by
-setting treatment assignment to 0. Another common approach is to derive the
-prediction model solely on the control patients, however this approach has been
-shown to lead to biased benefit predictions <span class="citation">[<a href="references.html#ref-vanKlaveren2019" role="doc-biblioref">5</a>,<a href="references.html#ref-Burke2014" role="doc-biblioref">8</a>,<a href="references.html#ref-Abadie2018" role="doc-biblioref">9</a>]</span>.</p>
+<p>In each simulation run we internally developed a prediction model on the entire
+population, using a logistic regression with main effects for all baseline
+covariates and treatment assignment. Individual risk predictions were derived by
+setting treatment assignment to 0. Another approach would be to derive the
+prediction model solely on the control patients; however, it has been shown to
+lead to biased benefit predictions <span class="citation">[<a href="references.html#ref-vanKlaveren2019" role="doc-biblioref">5</a>,<a href="references.html#ref-Burke2014" role="doc-biblioref">8</a>,<a href="references.html#ref-Abadie2018" role="doc-biblioref">9</a>]</span>.</p>
 <p>A <em>stratified HTE method</em> has been suggested as an alternative to traditional
 subgroup analyses <span class="citation">[<a href="references.html#ref-Kent2019" role="doc-biblioref">3</a>,<a href="references.html#ref-PathEnE" role="doc-biblioref">4</a>]</span>. Patients are stratified into
 equally-sized risk strata—in this case based on risk quartiles. Absolute
 treatment effects within risk strata are estimated by the difference in event
-rate between patients in the control arm and patients in the treated arm. We
-considered this approach as a reference, expecting it to perform worse than the
-other candidates, as its objective is to provide an illustration of HTE rather
-than to optimize individualized benefit predictions.</p>
+rate between control and treatment arm patients. We considered this approach as
+a reference, expecting it to perform worse than the other candidates, as its
+objective is to provide an illustration of HTE rather than to optimize
+individualized benefit predictions.</p>
 <p>Second, we considered a model which assumes <em>constant relative treatment effect</em>
 (constant odds ratio). Hence, absolute benefit is predicted from
-<span class="math inline">\(\hat{\tau}(x) = \text{expit}(PI) - \text{expit}(PI +\log(\text{OR}))\)</span>.</p>
+<span class="math inline">\(\tau(x;\hat{\beta}) = expit(\hat{lp}_0) - expit(\hat{lp}_0+\gamma_0)\)</span>, where
+<span class="math inline">\(\gamma_0\)</span> is the log of the assumed constant odds ratio.</p>
 <p>Third, we considered a logistic regression model including treatment, the
 prognostic index, and their linear interaction. Absolute benefit is then
 estimated from
-<span class="math inline">\(\hat{\tau}(x)=\text{expit}(\beta_0+\beta_{PI}PI) - \text{expit}(\beta_0+\beta_{t_x}+(\beta_{PI}+\beta_*)PI)\)</span>.
+<span class="math inline">\(\tau(x;\hat{\beta}) = expit(\gamma_0+\gamma_1\hat{lp}_0) - expit(\gamma_0+\gamma_2+(\gamma_1+\gamma_3)\hat{lp}_0)\)</span>
 We will refer to this method as the <em>linear interaction</em> approach.</p>
 <p>Fourth, we used <em>restricted cubic splines</em> (RCS) to relax the linearity
 assumption on the effect of the linear predictor <span class="citation">[<a href="references.html#ref-Harrell1988" role="doc-biblioref">10</a>]</span>. We considered
 splines with 3 (RCS-3), 4 (RCS-4) and 5 (RCS-5) knots to compare models with
 different levels of flexibility.</p>
-<p>Finally, we considered an <em>adaptive approach</em> using Akaike’s Information
-Criterion (AIC) for model selection. More specifically, for the adaptive
-approach we ranked the constant relative treatment effect model, the linear
-interaction model, and the RCS models with 3, 4, and 5 knots based on their AIC
-and selected the one with the lowest value. The extra degrees of freedom were 1
-(linear interaction), 2, 3 and 4 (RCS models) for these increasingly complex
-interactions with the treatment effect.</p>
+<p>Finally, we considered an adaptive approach using Akaike’s Information Criterion
+(AIC) for model selection. More specifically, we ranked the constant relative
+treatment effect model, the linear interaction model, and the RCS models with 3,
+4, and 5 knots based on their AIC and selected the one with the lowest
+value. The extra degrees of freedom were 1 (linear interaction), 2, 3 and 4 (RCS
+models) for these increasingly complex interactions with the treatment effect.</p>
 </div>
 <div id="evaluation-metrics" class="section level2" number="2.4">
 <h2>
@@ -161,47 +142,27 @@ interactions with the treatment effect.</p>
 </h2>
 <p>We evaluated the predictive accuracy of the considered methods by the root mean
 squared error (RMSE):</p>
-<p><span class="math display">\[\text{RMSE}=\sqrt{\frac{1}{n}\sum_{i=1}^n\big(\tau(x_i) - \hat{\tau}(x_i)\big)^2}\]</span>
-We compared the discriminative ability of the methods under study using
-c-for-benefit <span class="citation">[<a href="references.html#ref-vanKlaveren2018" role="doc-biblioref">11</a>]</span>. The c-for-benefit represents the probability
-that from two randomly chosen matched patient pairs with unequal observed
-benefit, the pair with greater observed benefit also has a higher predicted
-benefit. To be able to calculate observed benefit, patients in each treatment
-arm are ranked based on their predicted benefit and then matched 1:1 across
-treatment arms. <em>Observed</em> treatment benefit is defined as the difference of
-observed outcomes between the untreated and the treated patient of each matched
-patient pair. <em>Predicted</em> benefit is defined as the average of predicted benefit
-within each matched patient pair.</p>
-<p>We evaluated calibration in a similar manner, using the integrated calibration
-index (ICI) for benefit <span class="citation">[<a href="references.html#ref-Austin2019" role="doc-biblioref">12</a>]</span>. The observed benefits are regressed on
-the predicted benefits using a locally weighted scatterplot smoother (loess).
-The ICI-for-benefit is the average absolute difference between predicted and
-smooth observed benefit. Values closer to <span class="math inline">\(0\)</span> represent better calibration.</p>
-<p>For each scenario setting we performed 500 replications, within which all the
-considered models were fitted. For comparing between models we simulated a
-super-population of size 500,000 for each scenario. We calculated RMSE and
-discrimination and calibration for benefit of the models derived in each
-replication of our simulation settings within this super-population.</p>
+<p><span class="math display">\[\text{RMSE}=\sqrt{\frac{1}{n}\sum_{i=1}^n\big(\tau(x_i) - \hat{\tau}(x_i)\big)^2}\]</span></p>
+<p>We compared the discriminative ability of the methods under study using
+c-for-benefit <span class="citation">[<a href="references.html#ref-vanKlaveren2018" role="doc-biblioref">11</a>]</span> and the integrated calibration index (ICI) for
+benefit (Supplement, Section 6).</p>
+<p>For each scenario we performed 500 replications, within which all the considered
+models were fitted. We simulated a super-population of size 500,000 for each
+scenario within which we calculated RMSE and discrimination and calibration for
+benefit of all the models in each replication. represent better calibration.</p>
 </div>
 <div id="empirical-illustration" class="section level2" number="2.5">
 <h2>
 <span class="header-section-number">2.5</span> Empirical illustration<a class="anchor" aria-label="anchor" href="#empirical-illustration"><i class="fas fa-link"></i></a>
 </h2>
-<p>We demonstrated the different methods for individualizing treatment benefits
-using data from 30,510 patients with acute myocardial infarction (MI)
-included in the GUSTO-I trial.
-10,348
-patients were randomized to tissue plasminogen activator (tPA) treatment and
-20,162
-were randomized to streptokinase. The outcome of interest was 30-day mortality
-(total of 2,128 events), recorded for all patients.</p>
-<p>In line with previous analyses <span class="citation">[<a href="references.html#ref-Califf1997" role="doc-biblioref">13</a>,<a href="references.html#ref-Steyerberg2000" role="doc-biblioref">14</a>]</span>, we fitted a
-logistic regression model with 6 baseline covariates, i.e. age, Killip class,
-systolic blood pressure, heart rate, an indicator of previous MI, and the
-location of MI, to predict 30-day mortality risk. A constant effect of treatment
-was included in the model. When deriving risk predictions for individuals we set
-the treatment indicator to 0. More information on model development can be found
-in the supplement (Supplement, Section 8).</p>
+<p>We demonstrated the different methods using 30,510 patients with acute
+myocardial infarction (MI) included in the GUSTO-I trial. 10348 patients were randomized to tissue
+plasminogen activator (tPA) treatment and 20162 were randomized to streptokinase. The outcome of interest
+was 30-day mortality (total of 2,128 events), recorded for all
+patients. In line with previous analyses <span class="citation">[<a href="references.html#ref-Califf1997" role="doc-biblioref">12</a>,<a href="references.html#ref-Steyerberg2000" role="doc-biblioref">13</a>]</span>, we
+fitted a logistic regression model with 6 baseline covariates, i.e. age, Killip
+class, systolic blood pressure, heart rate, an indicator of previous MI, and the
+location of MI, to predict 30-day mortality risk (Supplement, Section 8).</p>
 </div>
 </div>
   <div class="chapter-nav">
@@ -211,7 +172,7 @@ in the supplement (Supplement, Section 8).</p>
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#methods"><span class="header-section-number">2</span> Methods</a></li>
-<li><a class="nav-link" href="#background"><span class="header-section-number">2.1</span> Background</a></li>
+<li><a class="nav-link" href="#notation"><span class="header-section-number">2.1</span> Notation</a></li>
 <li><a class="nav-link" href="#simulation-scenarios"><span class="header-section-number">2.2</span> Simulation scenarios</a></li>
 <li><a class="nav-link" href="#individualized-risk-based-benefit-predictions"><span class="header-section-number">2.3</span> Individualized risk-based benefit predictions</a></li>
 <li><a class="nav-link" href="#evaluation-metrics"><span class="header-section-number">2.4</span> Evaluation metrics</a></li>
@@ -232,7 +193,7 @@ in the supplement (Supplement, Section 8).</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong></strong>" was written by Alexandros Rekkas. It was last built on 2022-04-08.</p>
+    <p>"<strong></strong>" was written by Alexandros Rekkas. It was last built on 2022-04-11.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
