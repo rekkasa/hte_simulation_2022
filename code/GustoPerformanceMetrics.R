@@ -49,7 +49,7 @@ replicationExpression <- function(gusto) {
         slice(testRows) %>%
         dplyr::mutate(
           predictedBenefit = predictBenefitModelBasedHte(
- rothwell 1995 ecst           p             = plogis(.$riskLinearPredictor), 
+            p             = plogis(.$riskLinearPredictor), 
             modelBasedFit = model
           )
         )
