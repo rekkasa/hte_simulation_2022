@@ -2,6 +2,7 @@
 cover_letter*
 # submission/*.pdf
 *cache
+extras/bookdown/_bookdown_files/*files
 manuscript_files
 manuscript_cache
 supplement_files
