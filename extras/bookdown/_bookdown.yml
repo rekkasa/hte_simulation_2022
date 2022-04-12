@@ -1,5 +1,5 @@
 book_filename: "hte_simulation"
-new_session: false
+new_session: true
 before_chapter_script: _common.R
 delete_merged_file: true
 rmd_subdir: yes
@@ -8,3 +8,4 @@ language:
     chapter_name: ""
 rmd_files:
   - "index.Rmd"
+  - "supplement.Rmd"
