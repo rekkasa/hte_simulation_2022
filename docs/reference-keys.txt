@@ -36,7 +36,6 @@ results
 simulations
 empirical-illustration-1
 discussion
-references
 supplement
 notation-1
 simulation-settings
@@ -54,4 +53,4 @@ discrimination-and-calibration-for-benefit
 strong-relative-treatment-effect
 treatment-interactions
 empirical-illustration-2
-references-1
+references

@@ -9,3 +9,5 @@ language:
 rmd_files:
   - "index.Rmd"
   - "supplement.Rmd"
+  - "references.Rmd"
+

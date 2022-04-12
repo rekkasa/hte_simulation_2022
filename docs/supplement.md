@@ -16003,15 +16003,3 @@ Treatment & 0.543 & 0.051 & 10.625 & 0.000\\
 \bottomrule
 \end{longtable}
 \endgroup{}
-
-
-
-\newpage
-## References
-\setlength{\parindent}{-0.25in}
-\setlength{\leftskip}{0.25in}
-\noindent
-<div id="refs"></div>
-\setlength{\parindent}{0in}
-\setlength{\leftskip}{0in}
-\noindent

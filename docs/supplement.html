@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>6 Supplement | hte_simulation</title>
+<title>5 Supplement | hte_simulation</title>
 <meta name="author" content="Alexandros Rekkas">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.13/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -36,8 +36,8 @@
 <li><a class="" href="methods.html"><span class="header-section-number">2</span> Methods</a></li>
 <li><a class="" href="results.html"><span class="header-section-number">3</span> Results</a></li>
 <li><a class="" href="discussion.html"><span class="header-section-number">4</span> Discussion</a></li>
-<li><a class="" href="references.html"><span class="header-section-number">5</span> References</a></li>
-<li><a class="active" href="supplement.html"><span class="header-section-number">6</span> Supplement</a></li>
+<li><a class="active" href="supplement.html"><span class="header-section-number">5</span> Supplement</a></li>
+<li><a class="" href="references.html"><span class="header-section-number">6</span> References</a></li>
 </ul>
 
         <div class="book-extra">
@@ -45,13 +45,13 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="supplement" class="section level1" number="6">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="supplement" class="section level1" number="5">
 <h1>
-<span class="header-section-number">6</span> Supplement<a class="anchor" aria-label="anchor" href="#supplement"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5</span> Supplement<a class="anchor" aria-label="anchor" href="#supplement"><i class="fas fa-link"></i></a>
 </h1>
-<div id="notation-1" class="section level2" number="6.1">
+<div id="notation-1" class="section level2" number="5.1">
 <h2>
-<span class="header-section-number">6.1</span> Notation<a class="anchor" aria-label="anchor" href="#notation-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1</span> Notation<a class="anchor" aria-label="anchor" href="#notation-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>We observe RCT data <span class="math inline">\((Z, X, Y)\)</span>, where for each patient <span class="math inline">\(Z_i= 0, 1\)</span> is the
 treatment status, <span class="math inline">\(Y_i = 0, 1\)</span> is the observed outcome and <span class="math inline">\(X_i\)</span> is a set of
@@ -78,9 +78,9 @@ we predict CATE from
 where <span class="math inline">\(f(u,z)\)</span> describes interactions of the baseline risk linear predictor with
 treatment.</p>
 </div>
-<div id="simulation-settings" class="section level2" number="6.2">
+<div id="simulation-settings" class="section level2" number="5.2">
 <h2>
-<span class="header-section-number">6.2</span> Simulation settings<a class="anchor" aria-label="anchor" href="#simulation-settings"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2</span> Simulation settings<a class="anchor" aria-label="anchor" href="#simulation-settings"><i class="fas fa-link"></i></a>
 </h2>
 <p>For all patients we observe covariates <span class="math inline">\(X_1,\dots,X_8\)</span>, of which <span class="math inline">\(4\)</span> are
 continuous and <span class="math inline">\(4\)</span> are binary. More specifically,</p>
@@ -94,35 +94,35 @@ X_5,\dots,X_8 \sim B(1, 0.2)
 based on</p>
 <p><span class="math display" id="eq:p0">\[\begin{equation} 
 P(Y=1\:\vert\:X=x, Z=0) = g(\beta_0 + \beta_1x_1+\dots+\beta_8x_8) = g(lp_0),
-\tag{6.1}
+\tag{5.1}
 \end{equation}\]</span></p>
 <p>where <span class="math display">\[g(x) = \frac{e^x}{1+e^x}\]</span></p>
 <p>For treated patients, outcomes are generated from:</p>
 <p><span class="math display" id="eq:p1">\[\begin{equation}
 P(Y = 1\:\vert\:X=x, Z=1) = g(lp_1)
-\tag{6.2}
+\tag{5.2}
 \end{equation}\]</span></p>
 <p>where <span class="math display">\[lp_1 = \gamma_2(lp_0-c)^2+\gamma_1(lp_0-c)+\gamma_0\]</span></p>
 </div>
-<div id="base-case-scenario" class="section level2" number="6.3">
+<div id="base-case-scenario" class="section level2" number="5.3">
 <h2>
-<span class="header-section-number">6.3</span> Base-case scenario<a class="anchor" aria-label="anchor" href="#base-case-scenario"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3</span> Base-case scenario<a class="anchor" aria-label="anchor" href="#base-case-scenario"><i class="fas fa-link"></i></a>
 </h2>
 <p>The base-case scenario assumes a constant odds ratio of <span class="math inline">\(0.8\)</span> in favor of
 treatment. The simulated datasets are of size <span class="math inline">\(n=4250\)</span>, where treatment is
 allocated at random using a 50/50 split (80% power for the detection of an
 unadjusted OR of 0.8, assuming an event rate of 20% in the untreated
 arm). Outcome incidence in the untreated population is set at <span class="math inline">\(20\%\)</span>. For the
-development of the prediction model we use the model defined in <a href="supplement.html#eq:p0">(6.1)</a>
+development of the prediction model we use the model defined in <a href="supplement.html#eq:p0">(5.1)</a>
 including a constant treatment effect. When doing predictions, <span class="math inline">\(Z\)</span> is set to
 <span class="math inline">\(0\)</span>. The value of the true <span class="math inline">\(\beta\)</span> is such that the above prediction model
 has an AUC of <span class="math inline">\(0.75\)</span>.</p>
 <p>The previously defined targets are achieved when <span class="math inline">\(\beta=(-2.08, 0.49,\dots,0.49)^t\)</span>. For the derivations in the treatment arm we use
 <span class="math inline">\(\gamma=(\log(0.8), 1, 0)^t\)</span>.</p>
 </div>
-<div id="deviations-from-base-case" class="section level2" number="6.4">
+<div id="deviations-from-base-case" class="section level2" number="5.4">
 <h2>
-<span class="header-section-number">6.4</span> Deviations from base-case<a class="anchor" aria-label="anchor" href="#deviations-from-base-case"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4</span> Deviations from base-case<a class="anchor" aria-label="anchor" href="#deviations-from-base-case"><i class="fas fa-link"></i></a>
 </h2>
 <p>We deviate from the base-case scenario in two ways. First, we alter the overall
 target settings of sample size, overall treatment effect and prediction model
@@ -163,11 +163,11 @@ strong positive (<span class="math inline">\(0.50\times\text{true average benefi
 treatment-related benefit). In case of true absent treatment effects,
 treatment-related harms are set to <span class="math inline">\(1\%, 2\%\)</span> and <span class="math inline">\(-1\%\)</span> for positive, strong
 positive and negative setting, respectively. The settings for these deviations
-are defined in Table <a href="supplement.html#tab:tab1">6.1</a>.</p>
+are defined in Table <a href="supplement.html#tab:tab1">5.1</a>.</p>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
 <div class="inline-table"><table class="table" style="font-size: 9px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:tab1">Table 6.1: </span>Scenario settings of the entire simulation study.
+<span id="tab:tab1">Table 5.1: </span>Scenario settings of the entire simulation study.
 </caption>
 <thead>
 <tr>
@@ -42384,39 +42384,39 @@ negative
 </div>
 <div style="page-break-after: always;"></div>
 </div>
-<div id="plausible-scenario-settings" class="section level2" number="6.5">
+<div id="plausible-scenario-settings" class="section level2" number="5.5">
 <h2>
-<span class="header-section-number">6.5</span> Plausible scenario settings<a class="anchor" aria-label="anchor" href="#plausible-scenario-settings"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.5</span> Plausible scenario settings<a class="anchor" aria-label="anchor" href="#plausible-scenario-settings"><i class="fas fa-link"></i></a>
 </h2>
 <p>In this section we present specific scenarios from our simulation settings in
 which evolution of benefit followed similar patterns to <span class="citation">[<a href="references.html#ref-Kent2016" role="doc-biblioref">7</a>]</span>. In this
 case patients were stratified into risk quarters based on their true baseline
 risk. Within each risk quarter we constructed boxplots of true benefit.</p>
 </div>
-<div id="approaches-to-individualize-benefit-predictions" class="section level2" number="6.6">
+<div id="approaches-to-individualize-benefit-predictions" class="section level2" number="5.6">
 <h2>
-<span class="header-section-number">6.6</span> Approaches to individualize benefit predictions<a class="anchor" aria-label="anchor" href="#approaches-to-individualize-benefit-predictions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6</span> Approaches to individualize benefit predictions<a class="anchor" aria-label="anchor" href="#approaches-to-individualize-benefit-predictions"><i class="fas fa-link"></i></a>
 </h2>
-<div id="risk-modeling" class="section level3" number="6.6.1">
+<div id="risk-modeling" class="section level3" number="5.6.1">
 <h3>
-<span class="header-section-number">6.6.1</span> Risk modeling<a class="anchor" aria-label="anchor" href="#risk-modeling"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.1</span> Risk modeling<a class="anchor" aria-label="anchor" href="#risk-modeling"><i class="fas fa-link"></i></a>
 </h3>
 <p>Merging treatment arms, we develop prediction models including a constant relative treatment effect:</p>
 <p><span class="math display" id="eq:risk">\[\begin{equation}
 P(Y=1\:\vert\:X=x,Z=z) = g(x^t\beta + \gamma z)
-\tag{6.3}
+\tag{5.3}
 \end{equation}\]</span></p>
 <p>We derive baseline risk predictions for patients by setting <span class="math inline">\(Z=0\)</span> in
-<a href="supplement.html#eq:risk">(6.3)</a>. All methods for individualizing benefit predictions are 2-stage
+<a href="supplement.html#eq:risk">(5.3)</a>. All methods for individualizing benefit predictions are 2-stage
 methods, that start by fitting a model for predicting baseline risk. The
 estimated linear predictor of this model is</p>
 <p><span class="math display">\[\begin{equation*}
 \hat{lp} = lp(x;\hat{\beta}) = x^t\hat{\beta}
 \end{equation*}\]</span></p>
 </div>
-<div id="risk-stratification" class="section level3" number="6.6.2">
+<div id="risk-stratification" class="section level3" number="5.6.2">
 <h3>
-<span class="header-section-number">6.6.2</span> Risk stratification<a class="anchor" aria-label="anchor" href="#risk-stratification"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.2</span> Risk stratification<a class="anchor" aria-label="anchor" href="#risk-stratification"><i class="fas fa-link"></i></a>
 </h3>
 <p>Derive a prediction model using the same approach as above and divide the
 population in equally sized risk-based subgroups. Estimate subgroup-specific
@@ -42424,30 +42424,30 @@ absolute benefit from the observed absolute differences. Subject-specific
 benefit predictions are made by attributing to individuals their corresponding
 subgroup-specific estimate.</p>
 </div>
-<div id="constant-treatment-effect" class="section level3" number="6.6.3">
+<div id="constant-treatment-effect" class="section level3" number="5.6.3">
 <h3>
-<span class="header-section-number">6.6.3</span> Constant treatment effect<a class="anchor" aria-label="anchor" href="#constant-treatment-effect"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.3</span> Constant treatment effect<a class="anchor" aria-label="anchor" href="#constant-treatment-effect"><i class="fas fa-link"></i></a>
 </h3>
 <p>Assuming a constant relative treatment effect, fit the adjusted model in
-<a href="supplement.html#eq:risk">(6.3)</a>. Then, predict absolute benefit using</p>
+<a href="supplement.html#eq:risk">(5.3)</a>. Then, predict absolute benefit using</p>
 <p><span class="math display" id="eq:main">\[\begin{equation}
 \hat{\tau}(x;\hat{\beta},\hat{\gamma})=g(f(\hat{lp}, 0)) - g(f(\hat{lp},1)), 
-\tag{6.4}
+\tag{5.4}
 \end{equation}\]</span></p>
 <p>where <span class="math inline">\(f(\hat{lp}, z) = \hat{lp}+\hat{\gamma}z\)</span>, with <span class="math inline">\(\hat{\gamma}\)</span> the
 estimated relative treatment effect (log odds ratio).</p>
 </div>
-<div id="linear-interaction" class="section level3" number="6.6.4">
+<div id="linear-interaction" class="section level3" number="5.6.4">
 <h3>
-<span class="header-section-number">6.6.4</span> Linear interaction<a class="anchor" aria-label="anchor" href="#linear-interaction"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.4</span> Linear interaction<a class="anchor" aria-label="anchor" href="#linear-interaction"><i class="fas fa-link"></i></a>
 </h3>
 <p>We relax the assumption of a constant relative treatment effect in
-<a href="supplement.html#eq:main">(6.4)</a> by setting</p>
+<a href="supplement.html#eq:main">(5.4)</a> by setting</p>
 <p><span class="math display">\[ f(\hat{lp}, z) = \gamma_0+\gamma_1z+\gamma_2\hat{lp}+\gamma_3z\hat{lp} \]</span></p>
 </div>
-<div id="restricted-cubic-splines" class="section level3" number="6.6.5">
+<div id="restricted-cubic-splines" class="section level3" number="5.6.5">
 <h3>
-<span class="header-section-number">6.6.5</span> Restricted cubic splines<a class="anchor" aria-label="anchor" href="#restricted-cubic-splines"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.5</span> Restricted cubic splines<a class="anchor" aria-label="anchor" href="#restricted-cubic-splines"><i class="fas fa-link"></i></a>
 </h3>
 <p>Finally, we drop the linearity assumption and predict absolute benefit using
 smoothing with restricted cubic splines with <span class="math inline">\(k=3, 4\)</span> and <span class="math inline">\(5\)</span> knots. More
@@ -42458,37 +42458,37 @@ where
 with <span class="math inline">\(h_1(x)=x\)</span> and for <span class="math inline">\(j=2,\dots,k-2\)</span>
 <span class="math display">\[h_{j+1}(x)= (x-t_j)^3-(x-t_{k-1})_+^3 \frac{t_k-t_j}{t_k-t_{k-1}}+(x-t_k)^3_+\frac{t_{k-1}-t_j}{t_k-t_{k-1}}\]</span>
 where
-<span class="math inline">\(t_1,\dots,t_k\)</span> are the selected knots <span class="citation">[<a href="references.html#ref-harrell2017regression" role="doc-biblioref">21</a>]</span>.</p>
+<span class="math inline">\(t_1,\dots,t_k\)</span> are the selected knots <span class="citation">[<a href="references.html#ref-harrell2017regression" role="doc-biblioref">24</a>]</span>.</p>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-<div id="adaptive-model-selection-frequencies" class="section level2" number="6.7">
+<div id="adaptive-model-selection-frequencies" class="section level2" number="5.7">
 <h2>
-<span class="header-section-number">6.7</span> Adaptive model selection frequencies<a class="anchor" aria-label="anchor" href="#adaptive-model-selection-frequencies"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.7</span> Adaptive model selection frequencies<a class="anchor" aria-label="anchor" href="#adaptive-model-selection-frequencies"><i class="fas fa-link"></i></a>
 </h2>
 <div class="figure">
 <span id="fig:adaptiveBase"></span>
 <img src="supplement_files/figure-html/adaptiveBase-1.png" alt="Model selection frequencies of the adaptive approach based on Akaike's Information Criterion across 500 replications. The scenario with the true constant relative treatment effect (first panel) had a true prediction AUC of 0.75 and sample size of 4,250. " width="100%"><p class="caption">
-Figure 6.1: Model selection frequencies of the adaptive approach based on Akaike’s Information Criterion across 500 replications. The scenario with the true constant relative treatment effect (first panel) had a true prediction AUC of 0.75 and sample size of 4,250.
+Figure 5.1: Model selection frequencies of the adaptive approach based on Akaike’s Information Criterion across 500 replications. The scenario with the true constant relative treatment effect (first panel) had a true prediction AUC of 0.75 and sample size of 4,250.
 </p>
 </div>
 <div class="figure">
 <span id="fig:adaptiveSampleSize"></span>
 <img src="supplement_files/figure-html/adaptiveSampleSize-1.png" alt="Model selection frequencies of the adaptive approach based on Akaike's Information Criterion across 500 replications. Sample size is 17,000 rather than 4,250 in Figure \ref{fig:adaptiveBase}" width="100%"><p class="caption">
-Figure 6.2: Model selection frequencies of the adaptive approach based on Akaike’s Information Criterion across 500 replications. Sample size is 17,000 rather than 4,250 in Figure 
+Figure 5.2: Model selection frequencies of the adaptive approach based on Akaike’s Information Criterion across 500 replications. Sample size is 17,000 rather than 4,250 in Figure 
 </p>
 </div>
 <div class="figure">
 <span id="fig:adaptiveAuc"></span>
 <img src="supplement_files/figure-html/adaptiveAuc-1.png" alt="Model selection frequencies of the adaptive approach based on Akaike's Information Criterion across 500 replications. AUC is 0.85 rather than 0.75 in Figure \ref{fig:adaptiveBase}" width="100%"><p class="caption">
-Figure 6.3: Model selection frequencies of the adaptive approach based on Akaike’s Information Criterion across 500 replications. AUC is 0.85 rather than 0.75 in Figure 
+Figure 5.3: Model selection frequencies of the adaptive approach based on Akaike’s Information Criterion across 500 replications. AUC is 0.85 rather than 0.75 in Figure 
 </p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
-<div id="discrimination-and-calibration-for-benefit" class="section level2" number="6.8">
+<div id="discrimination-and-calibration-for-benefit" class="section level2" number="5.8">
 <h2>
-<span class="header-section-number">6.8</span> Discrimination and calibration for benefit<a class="anchor" aria-label="anchor" href="#discrimination-and-calibration-for-benefit"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8</span> Discrimination and calibration for benefit<a class="anchor" aria-label="anchor" href="#discrimination-and-calibration-for-benefit"><i class="fas fa-link"></i></a>
 </h2>
 <p>The c-for-benefit represents the probability that from two randomly chosen
 matched patient pairs with unequal observed benefit, the pair with greater
@@ -42499,39 +42499,39 @@ benefit is defined as the difference of observed outcomes between the untreated
 and the treated patient of each matched patient pair. Predicted benefit is
 defined as the average of predicted benefit within each matched patient pair.</p>
 <p>We evaluated calibration in a similar manner, using the integrated calibration
-index (ICI) for benefit <span class="citation">[<a href="references.html#ref-Austin2019" role="doc-biblioref">22</a>]</span>. The observed benefits are regressed on the
+index (ICI) for benefit <span class="citation">[<a href="references.html#ref-Austin2019" role="doc-biblioref">25</a>]</span>. The observed benefits are regressed on the
 predicted benefits using a locally weighted scatterplot smoother (loess). The
 ICI-for-benefit is the average absolute difference between predicted and smooth
 observed benefit. Values closer to represent better calibration.</p>
 <div class="figure">
 <span id="fig:discriminationSampleSize"></span>
 <img src="supplement_files/figure-html/discriminationSampleSize-1.png" alt="Discrimination for benefit of the considered methods across 500 replications calculated in a simulated sample of size 500,000. True prediction AUC of 0.75 and sample size of 17,000" width="100%"><p class="caption">
-Figure 6.4: Discrimination for benefit of the considered methods across 500 replications calculated in a simulated sample of size 500,000. True prediction AUC of 0.75 and sample size of 17,000
+Figure 5.4: Discrimination for benefit of the considered methods across 500 replications calculated in a simulated sample of size 500,000. True prediction AUC of 0.75 and sample size of 17,000
 </p>
 </div>
 <div class="figure">
 <span id="fig:discriminationAuc"></span>
 <img src="supplement_files/figure-html/discriminationAuc-1.png" alt="Discrimination for benefit of the considered methods across 500 replications calculated in a simulated sample of size 500,000. True prediction AUC of 0.85 and sample size of 4,250" width="100%"><p class="caption">
-Figure 6.5: Discrimination for benefit of the considered methods across 500 replications calculated in a simulated sample of size 500,000. True prediction AUC of 0.85 and sample size of 4,250
+Figure 5.5: Discrimination for benefit of the considered methods across 500 replications calculated in a simulated sample of size 500,000. True prediction AUC of 0.85 and sample size of 4,250
 </p>
 </div>
 <div class="figure">
 <span id="fig:calibrationSampleSize"></span>
 <img src="supplement_files/figure-html/calibrationSampleSize-1.png" alt="Calibration for benefit of the considered methods across 500 replications calculated in a simulated sample of size 500,000. True prediction AUC of 0.75 and sample size of 17,000" width="100%"><p class="caption">
-Figure 6.6: Calibration for benefit of the considered methods across 500 replications calculated in a simulated sample of size 500,000. True prediction AUC of 0.75 and sample size of 17,000
+Figure 5.6: Calibration for benefit of the considered methods across 500 replications calculated in a simulated sample of size 500,000. True prediction AUC of 0.75 and sample size of 17,000
 </p>
 </div>
 <div class="figure">
 <span id="fig:calibrationAuc"></span>
 <img src="supplement_files/figure-html/calibrationAuc-1.png" alt="Calibration for benefit of the considered methods across 500 replications calculated in a simulated sample of size 500,000. True prediction AUC of 0.85 and sample size of 4,250" width="100%"><p class="caption">
-Figure 6.7: Calibration for benefit of the considered methods across 500 replications calculated in a simulated sample of size 500,000. True prediction AUC of 0.85 and sample size of 4,250
+Figure 5.7: Calibration for benefit of the considered methods across 500 replications calculated in a simulated sample of size 500,000. True prediction AUC of 0.85 and sample size of 4,250
 </p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
-<div id="strong-relative-treatment-effect" class="section level2" number="6.9">
+<div id="strong-relative-treatment-effect" class="section level2" number="5.9">
 <h2>
-<span class="header-section-number">6.9</span> Strong relative treatment effect<a class="anchor" aria-label="anchor" href="#strong-relative-treatment-effect"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.9</span> Strong relative treatment effect<a class="anchor" aria-label="anchor" href="#strong-relative-treatment-effect"><i class="fas fa-link"></i></a>
 </h2>
 <p>Here we present the root mean squared error of the considered methods using
 strong constant relative treatment effect (<span class="math inline">\(\text{OR}=0.5\)</span>) as the
@@ -42543,26 +42543,26 @@ are considered. All results can be found at
 <div class="figure">
 <span id="fig:rmseHighBase"></span>
 <img src="supplement_files/figure-html/rmseHighBase-1.png" alt="RMSE of the considered methods across 500 replications calculated in a simulated super-population of size 500,000. The scenario with true constant relative treatment effect (panel A) had a true prediction AUC of 0.75 and sample size of 4,250. The RMSE is also presented for strong linear (panel B), strong quadratic (panel C), and non-monotonic (panel D) deviations from constant relative treatment effects. Panels on the right side present the true relationship between baseline risk (x-axis) and absolute treatment benefit (y-axis). The 2.5, 25, 75 and 97.5 percentiles of the risk distribution are expressed in the boxplot." width="100%"><p class="caption">
-Figure 6.8: RMSE of the considered methods across 500 replications calculated in a simulated super-population of size 500,000. The scenario with true constant relative treatment effect (panel A) had a true prediction AUC of 0.75 and sample size of 4,250. The RMSE is also presented for strong linear (panel B), strong quadratic (panel C), and non-monotonic (panel D) deviations from constant relative treatment effects. Panels on the right side present the true relationship between baseline risk (x-axis) and absolute treatment benefit (y-axis). The 2.5, 25, 75 and 97.5 percentiles of the risk distribution are expressed in the boxplot.
+Figure 5.8: RMSE of the considered methods across 500 replications calculated in a simulated super-population of size 500,000. The scenario with true constant relative treatment effect (panel A) had a true prediction AUC of 0.75 and sample size of 4,250. The RMSE is also presented for strong linear (panel B), strong quadratic (panel C), and non-monotonic (panel D) deviations from constant relative treatment effects. Panels on the right side present the true relationship between baseline risk (x-axis) and absolute treatment benefit (y-axis). The 2.5, 25, 75 and 97.5 percentiles of the risk distribution are expressed in the boxplot.
 </p>
 </div>
 <div class="figure">
 <span id="fig:rmseHighSampleSize"></span>
 <img src="supplement_files/figure-html/rmseHighSampleSize-1.png" alt="RMSE of the considered methods across 500 replcations calculated in a simulated sample of size 500,000. Sample size is 17,000 rather than 4,250 in Figure \ref{fig:rmseHighBase}." width="100%"><p class="caption">
-Figure 6.9: RMSE of the considered methods across 500 replcations calculated in a simulated sample of size 500,000. Sample size is 17,000 rather than 4,250 in Figure .
+Figure 5.9: RMSE of the considered methods across 500 replcations calculated in a simulated sample of size 500,000. Sample size is 17,000 rather than 4,250 in Figure .
 </p>
 </div>
 <div class="figure">
 <span id="fig:rmseHighAuc"></span>
 <img src="supplement_files/figure-html/rmseHighAuc-1.png" alt="RMSE of the considered methods across 500 replcations calculated in a simulated sample of size 500,000. AUC is 0.85 rather than in Figure \ref{fig:rmseHighBase}." width="100%"><p class="caption">
-Figure 6.10: RMSE of the considered methods across 500 replcations calculated in a simulated sample of size 500,000. AUC is 0.85 rather than in Figure .
+Figure 5.10: RMSE of the considered methods across 500 replcations calculated in a simulated sample of size 500,000. AUC is 0.85 rather than in Figure .
 </p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
-<div id="treatment-interactions" class="section level2" number="6.10">
+<div id="treatment-interactions" class="section level2" number="5.10">
 <h2>
-<span class="header-section-number">6.10</span> Treatment interactions<a class="anchor" aria-label="anchor" href="#treatment-interactions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10</span> Treatment interactions<a class="anchor" aria-label="anchor" href="#treatment-interactions"><i class="fas fa-link"></i></a>
 </h2>
 <p>We carried out a smaller set of simulations, in which we assumed true
 treatment-covariate interactions. Sample size was set to 4,250 and the AUC of
@@ -42582,11 +42582,11 @@ defined as 50% of the true average benefit of the scenario without
 treatment-related harms; 4) negative treatment-related harms (benefit), defined
 as an absolute risk reduction for treated patients of 50% of the true average
 benefit of the scenario without treatment-related harms. The exact settings can
-be found in Table <a href="supplement.html#tab:tab2">6.2</a>.</p>
+be found in Table <a href="supplement.html#tab:tab2">5.2</a>.</p>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
 <div class="inline-table"><table class="table" style="font-size: 9px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:tab2">Table 6.2: </span>Scenario settings of the treatment-covariate interaction scenarios.
+<span id="tab:tab2">Table 5.2: </span>Scenario settings of the treatment-covariate interaction scenarios.
 </caption>
 <thead>
 <tr>
@@ -44591,26 +44591,26 @@ negative
 <div class="figure">
 <span id="fig:rmseInteractionPositive"></span>
 <img src="supplement_files/figure-html/rmseInteractionPositive-1.png" alt="RMSE of the considered methods across 500 replications calculated in a simulated sample of size 500,000 where treatment-covariate interactions all favoring treatment were considered." width="100%"><p class="caption">
-Figure 6.11: RMSE of the considered methods across 500 replications calculated in a simulated sample of size 500,000 where treatment-covariate interactions all favoring treatment were considered.
+Figure 5.11: RMSE of the considered methods across 500 replications calculated in a simulated sample of size 500,000 where treatment-covariate interactions all favoring treatment were considered.
 </p>
 </div>
 <div class="figure">
 <span id="fig:rmseInteractionNegative"></span>
 <img src="supplement_files/figure-html/rmseInteractionNegative-1.png" alt="RMSE of the considered methods across 500 replications calculated in a simulated sample of size 500,000 where treatment-covariate interactions all favoring the control were considered." width="100%"><p class="caption">
-Figure 6.12: RMSE of the considered methods across 500 replications calculated in a simulated sample of size 500,000 where treatment-covariate interactions all favoring the control were considered.
+Figure 5.12: RMSE of the considered methods across 500 replications calculated in a simulated sample of size 500,000 where treatment-covariate interactions all favoring the control were considered.
 </p>
 </div>
 <div class="figure">
 <span id="fig:rmseInteractionCombined"></span>
 <img src="supplement_files/figure-html/rmseInteractionCombined-1.png" alt="RMSE of the considered methods across 500 replications calculated in a simulated sample of size 500,000 where treatment-covariate interactions 2 favoring treatment and 2 favoring the control were considered." width="100%"><p class="caption">
-Figure 6.13: RMSE of the considered methods across 500 replications calculated in a simulated sample of size 500,000 where treatment-covariate interactions 2 favoring treatment and 2 favoring the control were considered.
+Figure 5.13: RMSE of the considered methods across 500 replications calculated in a simulated sample of size 500,000 where treatment-covariate interactions 2 favoring treatment and 2 favoring the control were considered.
 </p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
-<div id="empirical-illustration-2" class="section level2" number="6.11">
+<div id="empirical-illustration-2" class="section level2" number="5.11">
 <h2>
-<span class="header-section-number">6.11</span> Empirical illustration<a class="anchor" aria-label="anchor" href="#empirical-illustration-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.11</span> Empirical illustration<a class="anchor" aria-label="anchor" href="#empirical-illustration-2"><i class="fas fa-link"></i></a>
 </h2>
 <p>For predicting baseline risk of 30-day mortality we fitted a logistic regression
 model with age, Killip class (<em>Killip</em>), systolic blood pressure (<em>sysbp</em>),
@@ -44619,7 +44619,7 @@ myocardial infarction (<em>miloc</em>) and treatment as the covariates. Baseline
 predictions were made setting treatment to 0.</p>
 <p><span class="math display" id="eq:gusto1">\[\begin{equation*}
 P(outcome=1|X=x) = \text{expit}(lp(x)),
-\tag{6.5}
+\tag{5.5}
 \end{equation*}\]</span>
 where
 <span class="math display" id="eq:gusto2">\[\begin{equation*}
@@ -44630,115 +44630,38 @@ lp(x)=&amp; \beta_0 + \beta_1 \text{age} + \beta_2 I(\text{Killip}=II) + \beta_3
 &amp;\beta_9 I(\text{miloc}=Anterior) + \beta_9 I(\text{miloc}=Other) +\\
 &amp;\gamma\times\text{treatment}
 \end{aligned}
-\tag{6.6}
+\tag{5.6}
 \end{equation*}\]</span></p>
 <p>and <span class="math inline">\(expit(x) = \frac{e^x}{1+e^x}\)</span></p>
-<div style="page-break-after: always;"></div>
-</div>
-<div id="references-1" class="section level2" number="6.12">
-<h2>
-<span class="header-section-number">6.12</span> References<a class="anchor" aria-label="anchor" href="#references-1"><i class="fas fa-link"></i></a>
-</h2>
-
-<div id="refs" class="references">
-<div id="ref-Varadhan2013">
-<p>[1] Varadhan R, Segal JB, Boyd CM, Wu AW, Weiss CO. A framework for the analysis of heterogeneity of treatment effect in patient-centered outcomes research. Journal of Clinical Epidemiology 2013;66:818–25. <a href="https://doi.org/10.1016/j.jclinepi.2013.02.009">https://doi.org/10.1016/j.jclinepi.2013.02.009</a>.</p>
-</div>
-<div id="ref-Rekkas2020">
-<p>[2] Rekkas A, Paulus JK, Raman G, Wong JB, Steyerberg EW, Rijnbeek PR, et al. Predictive approaches to heterogeneous treatment effects: A scoping review. BMC Medical Research Methodology 2020;20. <a href="https://doi.org/10.1186/s12874-020-01145-1">https://doi.org/10.1186/s12874-020-01145-1</a>.</p>
-</div>
-<div id="ref-Kent2019">
-<p>[3] Kent DM, Paulus JK, Klaveren D van, D’Agostino R, Goodman S, Hayward R, et al. The predictive approaches to treatment effect heterogeneity (PATH) statement. Annals of Internal Medicine 2019;172:35. <a href="https://doi.org/10.7326/m18-3667">https://doi.org/10.7326/m18-3667</a>.</p>
-</div>
-<div id="ref-PathEnE">
-<p>[4] Kent DM, Klaveren D van, Paulus JK, D’Agostino R, Goodman S, Hayward R, et al. The predictive approaches to treatment effect heterogeneity (PATH) statement: Explanation and elaboration. Annals of Internal Medicine 2019;172:W1. <a href="https://doi.org/10.7326/m18-3668">https://doi.org/10.7326/m18-3668</a>.</p>
-</div>
-<div id="ref-vanKlaveren2019">
-<p>[5] Klaveren D van, Balan TA, Steyerberg EW, Kent DM. Models with interactions overestimated heterogeneity of treatment effects and were prone to treatment mistargeting. Journal of Clinical Epidemiology 2019;114:72–83. <a href="https://doi.org/10.1016/j.jclinepi.2019.05.029">https://doi.org/10.1016/j.jclinepi.2019.05.029</a>.</p>
-</div>
-<div id="ref-Kent2010">
-<p>[6] Kent DM, Rothwell PM, Ioannidis JP, Altman DG, Hayward RA. Assessing and reporting heterogeneity in treatment effects in clinical trials: A proposal. Trials 2010;11. <a href="https://doi.org/10.1186/1745-6215-11-85">https://doi.org/10.1186/1745-6215-11-85</a>.</p>
-</div>
-<div id="ref-Kent2016">
-<p>[7] Kent DM, Nelson J, Dahabreh IJ, Rothwell PM, Altman DG, Hayward RA. Risk and treatment effect heterogeneity: Re-analysis of individual participant data from 32 large clinical trials. International Journal of Epidemiology 2016:dyw118. <a href="https://doi.org/10.1093/ije/dyw118">https://doi.org/10.1093/ije/dyw118</a>.</p>
-</div>
-<div id="ref-Burke2014">
-<p>[8] Burke JF, Hayward RA, Nelson JP, Kent DM. Using internally developed risk models to assess heterogeneity in treatment effects in clinical trials. Circulation: Cardiovascular Quality and Outcomes 2014;7:163–9. <a href="https://doi.org/10.1161/circoutcomes.113.000497">https://doi.org/10.1161/circoutcomes.113.000497</a>.</p>
-</div>
-<div id="ref-Abadie2018">
-<p>[9] Abadie A, Chingos MM, West MR. Endogenous stratification in randomized experiments. The Review of Economics and Statistics 2018;100:567–80. <a href="https://doi.org/10.1162/rest_a_00732">https://doi.org/10.1162/rest_a_00732</a>.</p>
-</div>
-<div id="ref-Harrell1988">
-<p>[10] Harrell FE, Lee KL, Pollock BG. Regression models in clinical studies: Determining relationships between predictors and response. JNCI Journal of the National Cancer Institute 1988;80:1198–202. <a href="https://doi.org/10.1093/jnci/80.15.1198">https://doi.org/10.1093/jnci/80.15.1198</a>.</p>
-</div>
-<div id="ref-vanKlaveren2018">
-<p>[11] Klaveren D van, Steyerberg EW, Serruys PW, Kent DM. The proposed “concordance-statistic for benefit” provided a useful metric when modeling heterogeneous treatment effects. Journal of Clinical Epidemiology 2018;94:59–68. <a href="https://doi.org/10.1016/j.jclinepi.2017.10.021">https://doi.org/10.1016/j.jclinepi.2017.10.021</a>.</p>
-</div>
-<div id="ref-Califf1997">
-<p>[12] Califf RM, Woodlief LH, Harrell FE, Lee KL, White HD, Guerci A, et al. Selection of thrombolytic therapy for individual patients: Development of a clinical model. American Heart Journal 1997;133:630–9. <a href="https://doi.org/10.1016/s0002-8703(97)70164-9">https://doi.org/10.1016/s0002-8703(97)70164-9</a>.</p>
-</div>
-<div id="ref-Steyerberg2000">
-<p>[13] Steyerberg EW, Bossuyt PMM, Lee KL. Clinical trials in acute myocardial infarction: Should we adjust for baseline characteristics? American Heart Journal 2000;139:745–51. <a href="https://doi.org/10.1016/s0002-8703(00)90001-2">https://doi.org/10.1016/s0002-8703(00)90001-2</a>.</p>
-</div>
-<div id="ref-Glasziou1995">
-<p>[14] Glasziou PP, Irwig LM. An evidence based approach to individualising treatment. BMJ 1995;311:1356–9. <a href="https://doi.org/10.1136/bmj.311.7016.1356">https://doi.org/10.1136/bmj.311.7016.1356</a>.</p>
-</div>
-<div id="ref-Athey2019">
-<p>[15] Athey S, Tibshirani J, Wager S. Generalized random forests. The Annals of Statistics 2019;47. <a href="https://doi.org/10.1214/18-aos1709">https://doi.org/10.1214/18-aos1709</a>.</p>
-</div>
-<div id="ref-Lu2018">
-<p>[16] Lu M, Sadiq S, Feaster DJ, Ishwaran H. Estimating individual treatment effect in observational data using random forest methods. Journal of Computational and Graphical Statistics 2018;27:209–19. <a href="https://doi.org/10.1080/10618600.2017.1356325">https://doi.org/10.1080/10618600.2017.1356325</a>.</p>
-</div>
-<div id="ref-Wager2018">
-<p>[17] Wager S, Athey S. Estimation and inference of heterogeneous treatment effects using random forests. Journal of the American Statistical Association 2018;113:1228–42. <a href="https://doi.org/10.1080/01621459.2017.1319839">https://doi.org/10.1080/01621459.2017.1319839</a>.</p>
-</div>
-<div id="ref-powers2018some">
-<p>[18] Powers S, Qian J, Jung K, Schuler A, Shah NH, Hastie T, et al. Some methods for heterogeneous treatment effect estimation in high dimensions. Statistics in Medicine 2018;37:1767–87.</p>
-</div>
-<div id="ref-farooq2013anatomical">
-<p>[19] Farooq V, Van Klaveren D, Steyerberg EW, Meliga E, Vergouwe Y, Chieffo A, et al. Anatomical and clinical characteristics to guide decision making between coronary artery bypass surgery and percutaneous coronary intervention for individual patients: Development and validation of syntax score ii. The Lancet 2013;381:639–50.</p>
-</div>
-<div id="ref-takahashi2020redevelopment">
-<p>[20] Takahashi K, Serruys PW, Fuster V, Farkouh ME, Spertus JA, Cohen DJ, et al. Redevelopment and validation of the syntax score ii to individualise decision making between percutaneous and surgical revascularisation in patients with complex coronary artery disease: Secondary analysis of the multicentre randomised controlled syntaxes trial with external cohort validation. The Lancet 2020;396:1399–412.</p>
-</div>
-<div id="ref-harrell2017regression">
-<p>[21] Harrell FE. Regression modeling strategies. vol. 330. Springer; 2017.</p>
-</div>
-<div id="ref-Austin2019">
-<p>[22] Austin PC, Steyerberg EW. The integrated calibration index (ICI) and related metrics for quantifying the calibration of logistic regression models. Statistics in Medicine 2019;38:4051–65. <a href="https://doi.org/10.1002/sim.8281">https://doi.org/10.1002/sim.8281</a>.</p>
-</div>
-</div>
-<p></p>
 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="references.html"><span class="header-section-number">5</span> References</a></div>
-<div class="empty"></div>
+<div class="prev"><a href="discussion.html"><span class="header-section-number">4</span> Discussion</a></div>
+<div class="next"><a href="references.html"><span class="header-section-number">6</span> References</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#supplement"><span class="header-section-number">6</span> Supplement</a></li>
-<li><a class="nav-link" href="#notation-1"><span class="header-section-number">6.1</span> Notation</a></li>
-<li><a class="nav-link" href="#simulation-settings"><span class="header-section-number">6.2</span> Simulation settings</a></li>
-<li><a class="nav-link" href="#base-case-scenario"><span class="header-section-number">6.3</span> Base-case scenario</a></li>
-<li><a class="nav-link" href="#deviations-from-base-case"><span class="header-section-number">6.4</span> Deviations from base-case</a></li>
-<li><a class="nav-link" href="#plausible-scenario-settings"><span class="header-section-number">6.5</span> Plausible scenario settings</a></li>
+<li><a class="nav-link" href="#supplement"><span class="header-section-number">5</span> Supplement</a></li>
+<li><a class="nav-link" href="#notation-1"><span class="header-section-number">5.1</span> Notation</a></li>
+<li><a class="nav-link" href="#simulation-settings"><span class="header-section-number">5.2</span> Simulation settings</a></li>
+<li><a class="nav-link" href="#base-case-scenario"><span class="header-section-number">5.3</span> Base-case scenario</a></li>
+<li><a class="nav-link" href="#deviations-from-base-case"><span class="header-section-number">5.4</span> Deviations from base-case</a></li>
+<li><a class="nav-link" href="#plausible-scenario-settings"><span class="header-section-number">5.5</span> Plausible scenario settings</a></li>
 <li>
-<a class="nav-link" href="#approaches-to-individualize-benefit-predictions"><span class="header-section-number">6.6</span> Approaches to individualize benefit predictions</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#risk-modeling"><span class="header-section-number">6.6.1</span> Risk modeling</a></li>
-<li><a class="nav-link" href="#risk-stratification"><span class="header-section-number">6.6.2</span> Risk stratification</a></li>
-<li><a class="nav-link" href="#constant-treatment-effect"><span class="header-section-number">6.6.3</span> Constant treatment effect</a></li>
-<li><a class="nav-link" href="#linear-interaction"><span class="header-section-number">6.6.4</span> Linear interaction</a></li>
-<li><a class="nav-link" href="#restricted-cubic-splines"><span class="header-section-number">6.6.5</span> Restricted cubic splines</a></li>
+<a class="nav-link" href="#approaches-to-individualize-benefit-predictions"><span class="header-section-number">5.6</span> Approaches to individualize benefit predictions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#risk-modeling"><span class="header-section-number">5.6.1</span> Risk modeling</a></li>
+<li><a class="nav-link" href="#risk-stratification"><span class="header-section-number">5.6.2</span> Risk stratification</a></li>
+<li><a class="nav-link" href="#constant-treatment-effect"><span class="header-section-number">5.6.3</span> Constant treatment effect</a></li>
+<li><a class="nav-link" href="#linear-interaction"><span class="header-section-number">5.6.4</span> Linear interaction</a></li>
+<li><a class="nav-link" href="#restricted-cubic-splines"><span class="header-section-number">5.6.5</span> Restricted cubic splines</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#adaptive-model-selection-frequencies"><span class="header-section-number">6.7</span> Adaptive model selection frequencies</a></li>
-<li><a class="nav-link" href="#discrimination-and-calibration-for-benefit"><span class="header-section-number">6.8</span> Discrimination and calibration for benefit</a></li>
-<li><a class="nav-link" href="#strong-relative-treatment-effect"><span class="header-section-number">6.9</span> Strong relative treatment effect</a></li>
-<li><a class="nav-link" href="#treatment-interactions"><span class="header-section-number">6.10</span> Treatment interactions</a></li>
-<li><a class="nav-link" href="#empirical-illustration-2"><span class="header-section-number">6.11</span> Empirical illustration</a></li>
-<li><a class="nav-link" href="#references-1"><span class="header-section-number">6.12</span> References</a></li>
+<li><a class="nav-link" href="#adaptive-model-selection-frequencies"><span class="header-section-number">5.7</span> Adaptive model selection frequencies</a></li>
+<li><a class="nav-link" href="#discrimination-and-calibration-for-benefit"><span class="header-section-number">5.8</span> Discrimination and calibration for benefit</a></li>
+<li><a class="nav-link" href="#strong-relative-treatment-effect"><span class="header-section-number">5.9</span> Strong relative treatment effect</a></li>
+<li><a class="nav-link" href="#treatment-interactions"><span class="header-section-number">5.10</span> Treatment interactions</a></li>
+<li><a class="nav-link" href="#empirical-illustration-2"><span class="header-section-number">5.11</span> Empirical illustration</a></li>
 </ul>
 
       <div class="book-extra">

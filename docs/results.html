@@ -36,8 +36,8 @@
 <li><a class="" href="methods.html"><span class="header-section-number">2</span> Methods</a></li>
 <li><a class="active" href="results.html"><span class="header-section-number">3</span> Results</a></li>
 <li><a class="" href="discussion.html"><span class="header-section-number">4</span> Discussion</a></li>
-<li><a class="" href="references.html"><span class="header-section-number">5</span> References</a></li>
-<li><a class="" href="supplement.html"><span class="header-section-number">6</span> Supplement</a></li>
+<li><a class="" href="supplement.html"><span class="header-section-number">5</span> Supplement</a></li>
+<li><a class="" href="references.html"><span class="header-section-number">6</span> References</a></li>
 </ul>
 
         <div class="book-extra">
@@ -54,18 +54,18 @@
 <span class="header-section-number">3.1</span> Simulations<a class="anchor" aria-label="anchor" href="#simulations"><i class="fas fa-link"></i></a>
 </h2>
 <p>The constant treatment effect approach outperformed other approaches in the base
-case scenario (N = 4,250; OR = 0.8; AUC= 0.75; No absolute treatment harm)
-with a true constant treatment effect (Median RMSE: constant treatment effect
+case scenario (N = 4,250; OR = 0.8; AUC= 0.75; no absolute treatment harm)
+with a true constant treatment effect (median RMSE: constant treatment effect
 0.009;
 linear interaction 0.014;
 RCS-3 0.018).
 The linear interaction model was optimal under true linear deviations
-(Median RMSE: constant treatment effect
+(median RMSE: constant treatment effect
 0.027;
 linear interaction 0.015;
 RCS-3 0.018; Figure  panels A-C)
 and even in the presence of true quadratic deviations
-(Median RMSE: constant treatment effect
+(median RMSE: constant treatment effect
 0.057;
 linear interaction 0.020;
 RCS-3 0.021; Figure  panels A-C)
@@ -192,24 +192,28 @@ all the code for the simulations can be found at
 <h2>
 <span class="header-section-number">3.2</span> Empirical illustration<a class="anchor" aria-label="anchor" href="#empirical-illustration-1"><i class="fas fa-link"></i></a>
 </h2>
-<p>We used the derived prognostic index to fit a constant treatment effect model, a
-linear interaction model and a RCS-3 model individualizing absolute benefit
-predictions. RCS-4 and RCS-5 models were excluded. In our simulations these
-methods were always outperformed by the simpler approaches and were often
-overfitted. Finally, an adaptive approach with only the 3 candidate models was
-also applied.</p>
+<p>We used the derived prognostic index to fit a constant treatment effect, a
+linear interaction and an RCS-3 model individualizing absolute benefit
+predictions. Following our simulation results, RCS-4 and RCS-5 models were
+excluded. Finally, an adaptive approach with the 3 candidate models was applied.</p>
 <p>All considered methods provided similar fits, predicting increasing benefits for
-patients with higher baseline risk predictions. All models followed the
-evolution of the stratified estimates very closely. The adaptive approach based
-on AIC selected the constant treatment effect model. The constant treatment
-effect model had somewhat lower AIC compared to the linear interaction model
-slightly worse cross-validated discrimination (c-for-benefit
-0.525 vs
-0.526) and better cross-validated
-calibration (ICI-for benefit 0.0104 vs
-0.0115). In conclusion, a simpler constant
-treatment effect model is adequate for predicting absolute 30-day mortality
-benefits of treatment with tPA in patients with with acute MI.</p>
+patients with higher baseline risk predictions, and followed the evolution of
+the stratified estimates closely (Figure ). The constant
+treatment effect model had somewhat lower AIC compared to the linear interaction
+model (AIC:
+9,336 versus
+9,342),
+equal cross-validated discrimination
+(c-for-benefit:
+0.525),
+and slightly better cross-validated calibration
+(ICI-for benefit:
+0.010 versus
+0.012).
+In conclusion, although the sample size (30,510 patients;
+2,128 events) allowed for flexible modeling approaches, a
+simpler constant treatment effect model is adequate for predicting absolute
+30-day mortality benefits of treatment with tPA in patients with acute MI.</p>
 <div class="figure">
 <span id="fig:gusto"></span>
 <img src="index_files/figure-html/gusto-1.png" alt="Individualized absolute benefit predictions based on baseline risk when using a constant treatment effect approach, a linear interaction approach and RCS smoothing using 3 knots. Risk stratified estimates of absolute benefit are presented within quartiles of baseline risk as reference." width="100%"><p class="caption">
