@@ -1,6 +1,6 @@
 .Rhistory
 cover_letter*
-submission/*.pdf
+# submission/*.pdf
 *cache
 manuscript_files
 manuscript_cache
@@ -22,3 +22,4 @@ renv/staging
 *~
 *.tex
 *.spl
+*.docx

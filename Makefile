@@ -203,6 +203,23 @@ submission/manuscript.pdf : submission/manuscript.rmd\
 	figures/gusto.tiff
 	R -e 'rmarkdown::render("submission/manuscript.rmd", output_format = "rticles::elsevier_article")'
 
+submission/manuscript.docx : submission/manuscript.rmd\
+	submission/references.bib\
+	data/raw/gusto.rda\
+	data/processed/adaptiveModel.csv\
+	data/processed/gustoPerformanceMetrics.csv\
+	data/processed/adaptiveSelections.csv\
+	data/processed/rmseDistribution.csv\
+	data/processed/discriminationDistribution.csv\
+	data/processed/calibration.csv\
+	figures/rmse_moderate_base.tiff\
+	figures/rmse_moderate_sample_size.tiff\
+	figures/rmse_moderate_auc.tiff\
+	figures/calibration_moderate_base.tiff\
+	figures/discrimination_moderate_base.tiff\
+	figures/gusto.tiff
+	R -e 'rmarkdown::render("submission/manuscript.rmd", output_format = "bookdown::word_document2")'
+
 submission/supplement.pdf : submission/supplement.rmd\
 	data/raw/gusto.rda\
 	data/processed/gustoPerformanceMetrics.csv\
