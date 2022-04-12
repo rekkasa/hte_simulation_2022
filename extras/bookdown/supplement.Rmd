@@ -190,8 +190,8 @@ risk. Within each risk quarter we constructed boxplots of true benefit.
 ```{r, cache=TRUE, echo=FALSE, warning=FALSE, fig.cap="Simulation scenarios that closely follow trials. In this case, we see increasing absolute benefits with increasing baseline risk.", fig.show="hold", out.width = '50%'}
 include_graphics(
   c(
-    here("figures/scenario_251.png"),
-    here("figures/scenario_324.png")
+    here::here("docs/supplement_files/figure-html/scenario_251.png"),
+    here::here("docs/supplement_files/figure-html/scenario_324.png")
   )
 )
 ```

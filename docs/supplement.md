@@ -15063,7 +15063,7 @@ risk. Within each risk quarter we constructed boxplots of true benefit.
 
 
 <div class="figure">
-<img src="/home/arekkas/Documents/Projects/hte_simulation_2022/figures/scenario_251.png" alt="Simulation scenarios that closely follow trials. In this case, we see increasing absolute benefits with increasing baseline risk." width="50%" /><img src="/home/arekkas/Documents/Projects/hte_simulation_2022/figures/scenario_324.png" alt="Simulation scenarios that closely follow trials. In this case, we see increasing absolute benefits with increasing baseline risk." width="50%" />
+<img src="/home/arekkas/Documents/Projects/hte_simulation_2022/docs/supplement_files/figure-html/scenario_251.png" alt="Simulation scenarios that closely follow trials. In this case, we see increasing absolute benefits with increasing baseline risk." width="50%" /><img src="/home/arekkas/Documents/Projects/hte_simulation_2022/docs/supplement_files/figure-html/scenario_324.png" alt="Simulation scenarios that closely follow trials. In this case, we see increasing absolute benefits with increasing baseline risk." width="50%" />
 <p class="caption">(\#fig:unnamed-chunk-2)Simulation scenarios that closely follow trials. In this case, we see increasing absolute benefits with increasing baseline risk.</p>
 </div>
 
