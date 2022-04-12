@@ -7,8 +7,6 @@ fig:gusto
 eq:p0
 eq:p1
 tab:tab1
-fig:unnamed-chunk-2
-fig:unnamed-chunk-3
 eq:risk
 eq:main
 fig:adaptiveBase

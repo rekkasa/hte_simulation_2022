@@ -15062,16 +15062,6 @@ case patients were stratified into risk quarters based on their true baseline
 risk. Within each risk quarter we constructed boxplots of true benefit.
 
 
-<div class="figure">
-<img src="/home/arekkas/Documents/Projects/hte_simulation_2022/docs/supplement_files/figure-html/scenario_251.png" alt="Simulation scenarios that closely follow trials. In this case, we see increasing absolute benefits with increasing baseline risk." width="50%" /><img src="/home/arekkas/Documents/Projects/hte_simulation_2022/docs/supplement_files/figure-html/scenario_324.png" alt="Simulation scenarios that closely follow trials. In this case, we see increasing absolute benefits with increasing baseline risk." width="50%" />
-<p class="caption">(\#fig:unnamed-chunk-2)Simulation scenarios that closely follow trials. In this case, we see increasing absolute benefits with increasing baseline risk.</p>
-</div>
-
-<div class="figure">
-<img src="/home/arekkas/Documents/Projects/hte_simulation_2022/figures/scenario_406.png" alt="Simulation scenarios that closely follow trials. In this case, we see increasing absolute benefits with increasing baseline risk up to the third risk quarter. In the fourth risk quarter this trend is interrupted and benefits are diminished." width="50%" /><img src="/home/arekkas/Documents/Projects/hte_simulation_2022/figures/scenario_422.png" alt="Simulation scenarios that closely follow trials. In this case, we see increasing absolute benefits with increasing baseline risk up to the third risk quarter. In the fourth risk quarter this trend is interrupted and benefits are diminished." width="50%" />
-<p class="caption">(\#fig:unnamed-chunk-3)Simulation scenarios that closely follow trials. In this case, we see increasing absolute benefits with increasing baseline risk up to the third risk quarter. In the fourth risk quarter this trend is interrupted and benefits are diminished.</p>
-</div>
-
 ## Approaches to individualize benefit predictions
 
 ### Risk modeling
@@ -15994,7 +15984,7 @@ and $expit(x) = \frac{e^x}{1+e^x}$
 \begingroup\fontsize{7}{9}\selectfont
 
 \begin{longtable}[t]{lrrrr}
-\caption{(\#tab:unnamed-chunk-5)Coefficients of the prediction model for 30-day mortality, based on the data from GUSTO-I trial.}\\
+\caption{(\#tab:unnamed-chunk-3)Coefficients of the prediction model for 30-day mortality, based on the data from GUSTO-I trial.}\\
 \toprule
 Variable & Estimate & stderror & zvalue & pvalue\\
 \midrule
